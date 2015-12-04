@@ -8,6 +8,7 @@ package project;
 import java.util.ArrayList;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
 /**
  *
@@ -34,17 +35,12 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        northPanel = new javax.swing.JPanel();
         meetingsDisplayChooserPanel = new javax.swing.JPanel();
         meetingsDisplayLabel = new javax.swing.JLabel();
         meetingsEntireDayButton = new javax.swing.JButton();
         meetingsSelectedRoomLabel = new javax.swing.JButton();
         meetingsSelectedUserLabel = new javax.swing.JButton();
         meetingsSpecificTimeSlotLabel = new javax.swing.JButton();
-        southPanel = new javax.swing.JPanel();
-        saveButton = new javax.swing.JButton();
-        saveAsButton = new javax.swing.JButton();
-        openButton = new javax.swing.JButton();
         roomPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         roomsList = new javax.swing.JList<>();
@@ -60,12 +56,25 @@ public class Main extends javax.swing.JFrame {
         removePersonButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         peopleList = new javax.swing.JList<>();
+        savePanel = new javax.swing.JPanel();
+        saveButton = new javax.swing.JButton();
+        saveAsButton = new javax.swing.JButton();
+        openButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
+        meetingsDisplayChooserPanel.setLayout(new java.awt.GridBagLayout());
+
         meetingsDisplayLabel.setText("Showing Meetings For: Entire Day");
+        meetingsDisplayLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        meetingsDisplayLabel.setVerticalAlignment(SwingConstants.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        meetingsDisplayChooserPanel.add(meetingsDisplayLabel, gridBagConstraints);
 
         meetingsEntireDayButton.setText("Entire Day");
         meetingsEntireDayButton.addActionListener(new java.awt.event.ActionListener() {
@@ -73,111 +82,40 @@ public class Main extends javax.swing.JFrame {
                 meetingsEntireDayButtonActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 48;
+        meetingsDisplayChooserPanel.add(meetingsEntireDayButton, gridBagConstraints);
 
         meetingsSelectedRoomLabel.setText("Selected Room");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 20;
+        meetingsDisplayChooserPanel.add(meetingsSelectedRoomLabel, gridBagConstraints);
 
         meetingsSelectedUserLabel.setText("Selected User");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 28;
+        meetingsDisplayChooserPanel.add(meetingsSelectedUserLabel, gridBagConstraints);
 
         meetingsSpecificTimeSlotLabel.setText("Specific Time Slot");
-
-        javax.swing.GroupLayout meetingsDisplayChooserPanelLayout = new javax.swing.GroupLayout(meetingsDisplayChooserPanel);
-        meetingsDisplayChooserPanel.setLayout(meetingsDisplayChooserPanelLayout);
-        meetingsDisplayChooserPanelLayout.setHorizontalGroup(
-            meetingsDisplayChooserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, meetingsDisplayChooserPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(meetingsDisplayLabel)
-                .addContainerGap())
-            .addGroup(meetingsDisplayChooserPanelLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(meetingsDisplayChooserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(meetingsSpecificTimeSlotLabel)
-                    .addComponent(meetingsEntireDayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(meetingsSelectedRoomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(meetingsSelectedUserLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        meetingsDisplayChooserPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {meetingsEntireDayButton, meetingsSelectedRoomLabel, meetingsSelectedUserLabel, meetingsSpecificTimeSlotLabel});
-
-        meetingsDisplayChooserPanelLayout.setVerticalGroup(
-            meetingsDisplayChooserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(meetingsDisplayChooserPanelLayout.createSequentialGroup()
-                .addComponent(meetingsDisplayLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(meetingsEntireDayButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(meetingsSelectedRoomLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(meetingsSelectedUserLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(meetingsSpecificTimeSlotLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        meetingsDisplayChooserPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {meetingsEntireDayButton, meetingsSelectedRoomLabel, meetingsSelectedUserLabel});
-
-        javax.swing.GroupLayout northPanelLayout = new javax.swing.GroupLayout(northPanel);
-        northPanel.setLayout(northPanelLayout);
-        northPanelLayout.setHorizontalGroup(
-            northPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(northPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(meetingsDisplayChooserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        northPanelLayout.setVerticalGroup(
-            northPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(northPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(meetingsDisplayChooserPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        meetingsDisplayChooserPanel.add(meetingsSpecificTimeSlotLabel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        getContentPane().add(northPanel, gridBagConstraints);
-
-        saveButton.setText("Save");
-
-        saveAsButton.setText("Save As");
-
-        openButton.setText("Open");
-
-        javax.swing.GroupLayout southPanelLayout = new javax.swing.GroupLayout(southPanel);
-        southPanel.setLayout(southPanelLayout);
-        southPanelLayout.setHorizontalGroup(
-            southPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, southPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(southPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(openButton)
-                    .addGroup(southPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(saveAsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-
-        southPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {openButton, saveAsButton, saveButton});
-
-        southPanelLayout.setVerticalGroup(
-            southPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(southPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(openButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveAsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.weightx = 0.3;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 2, 0);
-        getContentPane().add(southPanel, gridBagConstraints);
+        getContentPane().add(meetingsDisplayChooserPanel, gridBagConstraints);
 
         roomPanel.setLayout(new java.awt.GridBagLayout());
 
@@ -191,12 +129,12 @@ public class Main extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 5;
-        gridBagConstraints.ipady = 95;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.ipady = 117;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 1, 0);
         roomPanel.add(jScrollPane1, gridBagConstraints);
 
         addRoomButton.setText("Add Room");
@@ -207,19 +145,21 @@ public class Main extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         roomPanel.add(addRoomButton, gridBagConstraints);
 
         removeRoomButton.setText("Remove Room");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         roomPanel.add(removeRoomButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         getContentPane().add(roomPanel, gridBagConstraints);
 
         meetingPanel.setLayout(new java.awt.GridBagLayout());
@@ -235,6 +175,7 @@ public class Main extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         meetingPanel.add(removeMeetingButton, gridBagConstraints);
 
         meetingsList.setModel(new javax.swing.AbstractListModel<String>() {
@@ -257,6 +198,7 @@ public class Main extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         getContentPane().add(meetingPanel, gridBagConstraints);
 
         personPanel.setLayout(new java.awt.GridBagLayout());
@@ -266,14 +208,13 @@ public class Main extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         personPanel.add(addPersonButton, gridBagConstraints);
 
         removePersonButton.setText("Remove Person");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         personPanel.add(removePersonButton, gridBagConstraints);
 
         peopleList.setModel(new javax.swing.AbstractListModel<String>() {
@@ -296,11 +237,43 @@ public class Main extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         getContentPane().add(personPanel, gridBagConstraints);
+
+        savePanel.setLayout(new java.awt.GridBagLayout());
+
+        saveButton.setText("Save");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 17;
+        savePanel.add(saveButton, gridBagConstraints);
+
+        saveAsButton.setText("Save As");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        savePanel.add(saveAsButton, gridBagConstraints);
+
+        openButton.setText("Open");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 15;
+        savePanel.add(openButton, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.weightx = 0.3;
+        getContentPane().add(savePanel, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void meetingsEntireDayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meetingsEntireDayButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_meetingsEntireDayButtonActionPerformed
@@ -368,7 +341,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton meetingsSelectedRoomLabel;
     private javax.swing.JButton meetingsSelectedUserLabel;
     private javax.swing.JButton meetingsSpecificTimeSlotLabel;
-    private javax.swing.JPanel northPanel;
     private javax.swing.JButton openButton;
     private javax.swing.JList<String> peopleList;
     private javax.swing.JPanel personPanel;
@@ -379,6 +351,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JList<String> roomsList;
     private javax.swing.JButton saveAsButton;
     private javax.swing.JButton saveButton;
-    private javax.swing.JPanel southPanel;
+    private javax.swing.JPanel savePanel;
     // End of variables declaration//GEN-END:variables
 }
