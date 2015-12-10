@@ -375,7 +375,7 @@ public class Menu extends javax.swing.JFrame {
         variableList.clearSelection();  // just in case, clear the selection of the left list
 
         try {
-            FileInputStream fileIn = new FileInputStream("/tmp/data.ser");  // save data here
+            FileInputStream fileIn = new FileInputStream("data.ser");  // save data here
             ObjectInputStream in = new ObjectInputStream(fileIn);   // create new stream
             rooms = (ArrayList<Room>) in.readObject(); // cast object that's coming in to an ArrayList<Room>
             in.close(); // close the file and the stream
@@ -402,7 +402,7 @@ public class Menu extends javax.swing.JFrame {
         variableList.clearSelection();  // again, just in case
 
         try {
-            FileOutputStream fileOut = new FileOutputStream("/tmp/data.ser");   // open output file
+            FileOutputStream fileOut = new FileOutputStream("data.ser");   // open output file
             ObjectOutputStream out = new ObjectOutputStream(fileOut);   // output stream
             out.writeObject(main.getRooms());   // output the object
             out.close();    // close the output
