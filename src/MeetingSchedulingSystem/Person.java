@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project2;
+package MeetingSchedulingSystem;
 
 import java.io.Serializable;
 import javax.swing.BorderFactory;

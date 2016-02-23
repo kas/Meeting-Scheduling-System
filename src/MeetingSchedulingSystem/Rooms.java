@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project2;
+package MeetingSchedulingSystem;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -55,7 +55,6 @@ public class Rooms extends javax.swing.JFrame {
         specifyRoomsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(610, 385));
         setResizable(false);
 
         roomContainerPanel.setBackground(new java.awt.Color(153, 153, 255));

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project2;
+package MeetingSchedulingSystem;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -67,9 +67,9 @@ public class Menu extends javax.swing.JFrame {
         openButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
         meetingsScrollPane = new javax.swing.JScrollPane();
-        meetingsList = new javax.swing.JList<>();
+        meetingsList = new javax.swing.JList<String>();
         variableScrollPane = new javax.swing.JScrollPane();
-        variableList = new javax.swing.JList<>();
+        variableList = new javax.swing.JList<String>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
