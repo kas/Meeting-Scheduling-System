@@ -1,6 +1,6 @@
 # meeting-scheduling-system
 
-![demo gif](https://raw.github.com/kas/Meeting-Scheduling-System/master/demo.gif)
+![demo gif](https://raw.github.com/kas/meeting-scheduling-system/master/demo.gif)
 
 # Introduction
 
