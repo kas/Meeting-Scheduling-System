@@ -1,4 +1,4 @@
-# Meeting-Scheduling-System
+# meeting-scheduling-system
 
 ![demo gif](https://raw.github.com/kas/Meeting-Scheduling-System/master/demo.gif)
 
